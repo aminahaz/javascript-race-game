@@ -64,8 +64,8 @@ window.addEventListener(
        canvas.style.backgroundColor = 'black';
        document.getElementById('container').appendChild(canvas);
 
-       ctx = canvas.getContext('2d', { alpha: false});
-       ctx.imageSmoothingEnabled = false;
+       ctx = canvas.getContext('2d');
+       //ctx.imageSmoothingEnabled = false;
        ctx.font = '20px Verdana';
 
        Keyboard.setHandlers();
@@ -135,7 +135,9 @@ window.addEventListener(
     let x = 0;
     let dx = -(baseSegment.curve * basePercent);
     ctx.clearRect(0, 0, width, height);
+    
     let n, i, segment, car, sprite, spriteScale, spriteX, spriteY;
+
     for (n = 0; n < drawDistance; n++) {
      segment = segments[(baseSegment.index + n) % segments.length];
      segment.looped = segment.index < baseSegment.index;
