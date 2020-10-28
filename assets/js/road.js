@@ -14,12 +14,12 @@ class Road {
      static reset() {
         segments = [];
         Road.addStraight(ROAD.LENGTH.LONG);
-        // Road.addCurve(ROAD.LENGTH.LONG, -ROAD.CURVE.MEDIUM, ROAD.HILL.NONE);
-        // Road.addStraight();
-        // Road.addSCurves();
-        // Road.addStraight();
-        // Road.addHill(ROAD.LENGTH.LONG, ROAD.HILL.MEDIUM);
-        // Road.addLowRollingHills();
+        Road.addCurve(ROAD.LENGTH.LONG, -ROAD.CURVE.MEDIUM, ROAD.HILL.NONE);
+        Road.addStraight();
+        Road.addSCurves();
+        Road.addStraight();
+        Road.addHill(ROAD.LENGTH.LONG, ROAD.HILL.MEDIUM);
+        Road.addLowRollingHills();
         Road.addBumps();
         Road.addDownhillToEnd();
 
@@ -42,6 +42,14 @@ class Road {
       }
 
       static addSCurves() {
+        Road.add(ROAD.LENGTH.MEDIUM, ROAD.LENGTH.MEDIUM, ROAD.LENGTH.MEDIUM, -ROAD.CURVE.EASY);
+        Road.add(ROAD.LENGTH.MEDIUM, ROAD.LENGTH.MEDIUM, ROAD.LENGTH.MEDIUM, ROAD.CURVE.MEDIUM);
+        Road.add(ROAD.LENGTH.MEDIUM, ROAD.LENGTH.MEDIUM, ROAD.LENGTH.MEDIUM, ROAD.CURVE.EASY);
+        Road.add(ROAD.LENGTH.MEDIUM, ROAD.LENGTH.MEDIUM, ROAD.LENGTH.MEDIUM, -ROAD.CURVE.EASY);
+        Road.add(ROAD.LENGTH.MEDIUM, ROAD.LENGTH.MEDIUM, ROAD.LENGTH.MEDIUM, -ROAD.CURVE.MEDIUM);
+      }
+
+      static addMegaSCurves() {
         Road.add(ROAD.LENGTH.MEDIUM, ROAD.LENGTH.MEDIUM, ROAD.LENGTH.MEDIUM, -ROAD.CURVE.EASY);
         Road.add(ROAD.LENGTH.MEDIUM, ROAD.LENGTH.MEDIUM, ROAD.LENGTH.MEDIUM, ROAD.CURVE.MEDIUM);
         Road.add(ROAD.LENGTH.MEDIUM, ROAD.LENGTH.MEDIUM, ROAD.LENGTH.MEDIUM, ROAD.CURVE.EASY);
